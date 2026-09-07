@@ -164,3 +164,11 @@
   }
 
 }
+
+@utility bg-hero-gradient {
+  background-image: var(--gradient-hero);
+}
+
+@utility shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
