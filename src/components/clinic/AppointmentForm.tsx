@@ -28,12 +28,8 @@ export function AppointmentForm() {
       `Phone Number: ${phone.trim()}\n` +
       `Service Needed: ${service}\n` +
       `Preferred Date: ${date}`;
+  window.open(`https://wa.me/9779746888888?text=${encodeURIComponent(message)}`, "_blank");
 
-    window.open(`https://wa.me/9779746888888?text=${encodeURIComponent(message)}`, "_blank");
-  }
-      "_blank",
-      "noopener,noreferrer",
-    );
   }
 
   return (
