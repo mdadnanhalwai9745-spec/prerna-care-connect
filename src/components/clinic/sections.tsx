@@ -46,6 +46,7 @@ export function Header() {
           <a href="#blog" className="hover:text-foreground">Blog</a>
           <a href="#hours" className="hover:text-foreground">Hours</a>
           <a href="#book" className="hover:text-foreground">Book</a>
+          <a href="#reviews" className="hover:text-foreground">Reviews</a>
           <a href="#contact" className="hover:text-foreground">Contact</a>
         </nav>
         <Button asChild size="sm">
