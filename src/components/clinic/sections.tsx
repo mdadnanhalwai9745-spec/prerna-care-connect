@@ -12,9 +12,14 @@ import {
   Mic,
   ShieldPlus,
   Navigation,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/clinic-hero.jpg";
+import newbornCareAsset from "@/assets/newborn-care.jpg.asset.json";
+import clinicExteriorAsset from "@/assets/clinic-exterior.jpg.asset.json";
+import entProcedureAsset from "@/assets/ent-procedure.webp.asset.json";
+import surgeryAsset from "@/assets/surgery.jpg.asset.json";
 import { AppointmentForm, CLINIC_PHONE, CLINIC_PHONE_DISPLAY } from "./AppointmentForm";
 
 const ADDRESS =
