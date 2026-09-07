@@ -43,6 +43,7 @@ export function Header() {
         </a>
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
           <a href="#services" className="hover:text-foreground">Services</a>
+          <a href="#blog" className="hover:text-foreground">Blog</a>
           <a href="#hours" className="hover:text-foreground">Hours</a>
           <a href="#book" className="hover:text-foreground">Book</a>
           <a href="#contact" className="hover:text-foreground">Contact</a>
