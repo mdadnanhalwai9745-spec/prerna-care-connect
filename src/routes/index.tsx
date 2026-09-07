@@ -6,6 +6,7 @@ import {
   Blog,
   ClinicInfo,
   Contact,
+  Reviews,
   Footer,
 } from "@/components/clinic/sections";
 
