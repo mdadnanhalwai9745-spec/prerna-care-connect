@@ -82,6 +82,7 @@ function Index() {
         <Blog />
         <ClinicInfo />
         <Contact />
+        <Reviews />
       </main>
       <Footer />
     </div>
