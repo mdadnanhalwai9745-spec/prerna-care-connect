@@ -46,6 +46,7 @@ export function Header() {
           <a href="#blog" className="hover:text-foreground">Blog</a>
           <a href="#hours" className="hover:text-foreground">Hours</a>
           <a href="#book" className="hover:text-foreground">Book</a>
+          <a href="#reviews" className="hover:text-foreground">Reviews</a>
           <a href="#contact" className="hover:text-foreground">Contact</a>
         </nav>
         <Button asChild size="sm">
@@ -329,6 +330,114 @@ export function Contact() {
 
         <div id="book">
           <AppointmentForm />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const reviews = [
+  {
+    name: "Jyoti Dutta",
+    initials: "JD",
+    timeframe: "10 months ago",
+    verified: true,
+    quote:
+      "Exceptional care and professional staff. The doctors take time to listen and provide accurate diagnosis for both ENT and Gynaecology care.",
+  },
+  {
+    name: "Kamlesh Karn",
+    initials: "KK",
+    timeframe: "Verified Patient",
+    verified: true,
+    quote:
+      "Highly recommended clinic in Nepalgunj! Clean environment, friendly doctors, and very smooth appointment process.",
+  },
+  {
+    name: "Anu Tharu",
+    initials: "AT",
+    timeframe: "Verified Patient",
+    verified: true,
+    quote:
+      "Very supportive and skilled medical team. Excellent experience for women's healthcare and general ENT treatment.",
+  },
+];
+
+const GOOGLE_REVIEWS_URL =
+  "https://www.google.com/maps/place/PRERNA+CLINIC/@?hl=en&entry=ttu";
+
+export function Reviews() {
+  return (
+    <section id="reviews" className="border-t border-border bg-surface">
+      <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-medium text-foreground shadow-sm">
+              <Star className="h-4 w-4 fill-amber-500 text-amber-500" />
+              5.0 Rating on Google (3 Reviews)
+            </div>
+            <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">What Our Patients Say</h2>
+            <p className="mt-3 max-w-xl text-muted-foreground">
+              Real feedback from patients who visited PRERNA CLINIC for Gynaecology, obstetrics and
+              ENT care in Nepalgunj.
+            </p>
+          </div>
+          <Button asChild variant="outline" className="shrink-0">
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+              <Navigation className="h-4 w-4" /> Write a Google Review
+            </a>
+          </Button>
+        </div>
+
+        <div className="relative mt-10">
+          <div className="-mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
+            {reviews.map((review) => (
+              <article
+                key={review.name}
+                className="w-[85vw] shrink-0 snap-center rounded-2xl border border-border bg-card p-6 shadow-soft transition-shadow hover:shadow-md md:w-auto"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                    {review.initials}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="truncate text-base font-semibold">{review.name}</h3>
+                    <p className="text-xs text-muted-foreground">{review.timeframe}</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex gap-0.5">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-4 w-4 fill-amber-500 text-amber-500"
+                      aria-hidden="true"
+                    />
+                  ))}
+                </div>
+                <blockquote className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  “{review.quote}”
+                </blockquote>
+                {review.verified && (
+                  <p className="mt-4 flex items-center gap-1.5 text-xs text-muted-foreground">
+                    <ShieldPlus className="h-3.5 w-3.5 text-teal" /> Verified patient review
+                  </p>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 flex flex-col items-center justify-center gap-2 border-t border-border pt-6 text-center text-sm text-muted-foreground sm:flex-row">
+          <span>Reviews verified from Google Business Profile</span>
+          <span className="hidden sm:inline">·</span>
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 font-medium text-foreground hover:underline"
+          >
+            <MapPin className="h-3.5 w-3.5 text-primary" /> View on Google Maps
+          </a>
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ import {
   Blog,
   ClinicInfo,
   Contact,
+  Reviews,
   Footer,
 } from "@/components/clinic/sections";
 
@@ -81,6 +82,7 @@ function Index() {
         <Blog />
         <ClinicInfo />
         <Contact />
+        <Reviews />
       </main>
       <Footer />
     </div>
