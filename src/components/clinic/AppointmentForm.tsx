@@ -13,22 +13,24 @@ export function AppointmentForm() {
   const [date, setDate] = useState("");
   const [error, setError] = useState("");
 
-  function handleSubmit(e: FormEvent) {
+ function handleSubmit(e: FormEvent) {
     e.preventDefault();
+
     if (!name.trim() || !phone.trim() || !date) {
       setError("Please fill in your name, phone number and preferred date.");
       return;
     }
+
     setError("");
-    const message =
-      `Namaste PRERNA CLINIC, I would like to request an appointment.\n\n` +
+
+    const message = `Namaste PRERNA CLINIC, I would like to request an appointment.\n\n` +
       `Patient Name: ${name.trim()}\n` +
       `Phone Number: ${phone.trim()}\n` +
       `Service Needed: ${service}\n` +
-      `Preferred Date: ${date}\n\n` +
-      `Please confirm a time slot. Thank you.`;
-    window.open(
-      `https://wa.me/${CLINIC_PHONE.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`,
+      `Preferred Date: ${date}`;
+
+    window.open(`https://wa.me/9779746888888?text=${encodeURIComponent(message)}`, "_blank");
+  }
       "_blank",
       "noopener,noreferrer",
     );
