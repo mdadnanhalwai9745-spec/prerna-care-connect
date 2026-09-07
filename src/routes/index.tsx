@@ -3,6 +3,7 @@ import {
   Header,
   Hero,
   Services,
+  Blog,
   ClinicInfo,
   Contact,
   Footer,
