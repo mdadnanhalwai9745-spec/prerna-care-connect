@@ -3,6 +3,7 @@ import {
   Header,
   Hero,
   Services,
+  Blog,
   ClinicInfo,
   Contact,
   Footer,
@@ -77,6 +78,7 @@ function Index() {
       <main>
         <Hero />
         <Services />
+        <Blog />
         <ClinicInfo />
         <Contact />
       </main>

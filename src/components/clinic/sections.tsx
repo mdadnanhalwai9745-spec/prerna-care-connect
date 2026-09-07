@@ -12,9 +12,14 @@ import {
   Mic,
   ShieldPlus,
   Navigation,
+  BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/clinic-hero.jpg";
+import newbornCareAsset from "@/assets/newborn-care.jpg.asset.json";
+import clinicExteriorAsset from "@/assets/clinic-exterior.jpg.asset.json";
+import entProcedureAsset from "@/assets/ent-procedure.webp.asset.json";
+import surgeryAsset from "@/assets/surgery.jpg.asset.json";
 import { AppointmentForm, CLINIC_PHONE, CLINIC_PHONE_DISPLAY } from "./AppointmentForm";
 
 const ADDRESS =
@@ -38,6 +43,7 @@ export function Header() {
         </a>
         <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
           <a href="#services" className="hover:text-foreground">Services</a>
+          <a href="#blog" className="hover:text-foreground">Blog</a>
           <a href="#hours" className="hover:text-foreground">Hours</a>
           <a href="#book" className="hover:text-foreground">Book</a>
           <a href="#contact" className="hover:text-foreground">Contact</a>
@@ -173,6 +179,66 @@ export function Services() {
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+}
+
+const blogPosts = [
+  {
+    image: newbornCareAsset.url,
+    title: "Newborn care",
+    text: "Safe, gentle care for mothers and newborns from the very first moments.",
+  },
+  {
+    image: clinicExteriorAsset.url,
+    title: "Our clinic",
+    text: "PRERNA CLINIC on Pasang Lhamu Marg, easy to reach beside City College of Management.",
+  },
+  {
+    image: entProcedureAsset.url,
+    title: "ENT diagnostics",
+    text: "Modern endoscopy and examination for ear, nose and throat concerns.",
+  },
+  {
+    image: surgeryAsset.url,
+    title: "Surgical care",
+    text: "Experienced hands in the operating room for gynaecology and ENT procedures.",
+  },
+];
+
+export function Blog() {
+  return (
+    <section id="blog" className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+      <div className="flex items-center gap-2 text-primary">
+        <BookOpen className="h-5 w-5" />
+        <span className="text-sm font-semibold uppercase tracking-wide">Blog</span>
+      </div>
+      <h2 className="mt-2 text-3xl font-semibold sm:text-4xl">A look inside PRERNA CLINIC</h2>
+      <p className="mt-3 max-w-2xl text-muted-foreground">
+        Photos from our daily work caring for women, mothers, and ENT patients in Nepalgunj.
+      </p>
+
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {blogPosts.map((post) => (
+          <div
+            key={post.title}
+            className="group overflow-hidden rounded-2xl border border-border bg-card transition-shadow hover:shadow-soft"
+          >
+            <div className="aspect-[4/3] overflow-hidden">
+              <img
+                src={post.image}
+                alt={post.title}
+                loading="lazy"
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-5">
+              <h3 className="text-base font-semibold">{post.title}</h3>
+              <p className="mt-1.5 text-sm text-muted-foreground">{post.text}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
