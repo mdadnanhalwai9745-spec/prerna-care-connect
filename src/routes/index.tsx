@@ -78,6 +78,7 @@ function Index() {
       <main>
         <Hero />
         <Services />
+        <Blog />
         <ClinicInfo />
         <Contact />
       </main>
